@@ -50,6 +50,7 @@ wdpa_url <- function(x, wait = FALSE) {
       rd$maxWindowSize()
       ## navigate to url and open download modal
       rd$navigate(paste0("https://protectedplanet.net/country/", x))
+      Sys.sleep(3) # wait 3 seconds for page to load
       elem <- rd$findElement(using = "css", ".link-with-icon--bold")
       elem$clickElement()
       Sys.sleep(3) # wait 3 seconds for page to load
